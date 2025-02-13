@@ -37,40 +37,39 @@
                 <Font name="Arial Bold" size="18.0" />
             </font>
         </Text>
-        <AnchorPane prefHeight="200.0" prefWidth="200.0" />
-        <Ellipse radiusX="198.0" radiusY="50.0">
-            <fill>
-                <LinearGradient endX="0.5" endY="1.0" startX="0.5">
-                    <stops>
-                        <Stop color="DODGERBLUE" />
-                        <Stop color="LIGHTBLUE" offset="0.5" />
-                        <Stop color="LIGHTGREEN" offset="1.0" />
-                    </stops>
-                </LinearGradient>
-            </fill>
-            <effect>
-                <DropShadow color="GREY" offsetX="5.0" offsetY="5.0" />
-            </effect>
-        </Ellipse>
-        <SplitPane prefHeight="200.0" prefWidth="200.0" />
-        <AnchorPane prefHeight="200.0" prefWidth="200.0" />
-        <ListView prefHeight="200.0" prefWidth="200.0" />
-        <ButtonBar prefHeight="40.0" prefWidth="200.0">
-            <buttons>
-                <Button mnemonicParsing="false" text="Button" />
-            </buttons>
-        </ButtonBar>
-        <GridPane>
-            <columnConstraints>
-                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-            </columnConstraints>
-            <rowConstraints>
-                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-            </rowConstraints>
-        </GridPane>
+      <AnchorPane prefHeight="200.0" prefWidth="200.0" />
+          <Ellipse radiusX="198.0" radiusY="50.0">
+              <fill>
+                  <LinearGradient endX="0.5" endY="1.0" startX="0.5">
+                      <stops>
+                          <Stop color="DODGERBLUE" />
+                          <Stop color="LIGHTBLUE" offset="0.5" />
+                          <Stop color="LIGHTGREEN" offset="1.0" />
+                      </stops>
+                  </LinearGradient>
+              </fill>
+              <effect>
+                  <DropShadow color="GREY" offsetX="5.0" offsetY="5.0" />
+              </effect>
+          </Ellipse>
+      <SplitPane prefHeight="200.0" prefWidth="200.0" />
+      <AnchorPane prefHeight="200.0" prefWidth="200.0" />
+      <ListView prefHeight="200.0" prefWidth="200.0" />
+      <ButtonBar prefHeight="40.0" prefWidth="200.0">
+        <buttons>
+          <Button mnemonicParsing="false" text="Button" />
+        </buttons>
+      </ButtonBar>
+      <GridPane>
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+      </GridPane>
     </children>
 </VBox>
-
