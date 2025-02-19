@@ -54,12 +54,9 @@
           </Ellipse>
       <SplitPane prefHeight="200.0" prefWidth="200.0" />
       <AnchorPane prefHeight="200.0" prefWidth="200.0" />
+    <Button mnemonicParsing="false" text="Button" />
       <ListView prefHeight="200.0" prefWidth="200.0" />
-      <ButtonBar prefHeight="40.0" prefWidth="200.0">
-        <buttons>
-          <Button mnemonicParsing="false" text="Button" />
-        </buttons>
-      </ButtonBar>
+      <ButtonBar prefHeight="40.0" prefWidth="200.0" />
       <GridPane>
         <columnConstraints>
           <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
