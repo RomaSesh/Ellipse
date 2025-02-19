@@ -5,6 +5,8 @@ import javafx.animation.Interpolator;
 import javafx.animation.RotateTransition;
 import javafx.application.Application;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
+import javafx.scene.control.Slider;
 import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
@@ -36,8 +38,19 @@ public class MyShapes extends Application {
         statusText.setFont(Font.font("Arial", 16));
         statusText.setFill(Color.DARKBLUE);
 
-        // Создаем контейнер VBox для размещения StackPane и текста статуса
-        VBox root = new VBox(stackPane, statusText);
+        // Создаем кнопку для управления анимацией
+        Button controlButton = new Button("Запустить анимацию");
+        controlButton.setStyle("-fx-font-size: 14;");
+
+        // Создаем слайдер для управления скоростью анимации
+        Slider speedSlider = new Slider(500, 5000, 2500);
+        speedSlider.setShowTickLabels(true);
+        speedSlider.setShowTickMarks(true);
+        speedSlider.setMajorTickUnit(1000);
+        speedSlider.setBlockIncrement(500);
+
+        // Создаем контейнер VBox для размещения StackPane, кнопки, слайдера и текста статуса
+        VBox root = new VBox(stackPane, controlButton, speedSlider, statusText);
         root.setSpacing(20); // Устанавливаем отступ между элементами
         root.setStyle("-fx-background-color: lightyellow;"); // Устанавливаем цвет фона VBox
 
@@ -48,19 +61,26 @@ public class MyShapes extends Application {
         rotate.setInterpolator(Interpolator.LINEAR); // Устанавливаем линейную интерполяцию анимации
         rotate.setCycleCount(Animation.INDEFINITE); // Устанавливаем бесконечное повторение анимации
 
-        // Обработка щелчка мыши на StackPane
-        stackPane.setOnMouseClicked(mouseEvent -> {
+        // Обработка нажатия на кнопку
+        controlButton.setOnAction(event -> {
             if (rotate.getStatus().equals(Animation.Status.RUNNING)) {
                 rotate.pause(); // Если анимация запущена, ставим её на паузу
                 statusText.setText("Анимация на паузе"); // Обновляем статус
+                controlButton.setText("Запустить анимацию"); // Обновляем текст кнопки
             } else {
                 rotate.play(); // Если анимация на паузе, запускаем её
                 statusText.setText("Анимация запущена"); // Обновляем статус
+                controlButton.setText("Остановить анимацию"); // Обновляем текст кнопки
             }
         });
 
+        // Обработка изменения значения слайдера
+        speedSlider.valueProperty().addListener((obs, oldVal, newVal) -> {
+            rotate.setDuration(Duration.millis(newVal.doubleValue()));
+        });
+
         // Создаем сцену с контейнером VBox в качестве корневого узла
-        Scene scene = new Scene(root, 350, 230);
+        Scene scene = new Scene(root, 350, 300);
         // Настраиваем и показываем окно приложения
         primaryStage.setTitle("JavaFX Centered Shapes"); // Заголовок окна
         primaryStage.setScene(scene); // Устанавливаем сцену
